@@ -7,17 +7,17 @@ import (
 	rl "github.com/gen2brain/raylib-go/raylib"
 )
 
-type World struct {
+type Worldo struct {
 	platforms         []Platform
 	selected_platform int
 	editing           bool
 }
 
-func (w *World) addPlatform() {
+func (w *Worldo) addPlatform() {
 	w.platforms = append(w.platforms, newPlatform(rl.NewVector3(0, 0, 0), rl.NewVector3(1, 1, 1), rl.Black))
 }
 
-func (w *World) update() {
+func (w *Worldo) update() {
 	if w.selected_platform > len(w.platforms) {
 		w.selected_platform = len(w.platforms) - 1
 	}
@@ -92,14 +92,14 @@ func (w *World) update() {
 	}
 }
 
-func (w *World) draw() {
+func (w *Worldo) draw() {
 	for platform_index := 0; platform_index < len(w.platforms); platform_index++ {
 		p := &w.platforms[platform_index]
 		p.draw()
 	}
 }
 
-func newWorld() (w World) {
+func newWorld() (w Worldo) {
 	w.editing = false
 	w.selected_platform = 0
 

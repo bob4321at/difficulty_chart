@@ -18,7 +18,7 @@ func update() {
 }
 
 var player Player
-var world World
+var world Worldo
 
 func draw() {
 	rl.BeginDrawing()
